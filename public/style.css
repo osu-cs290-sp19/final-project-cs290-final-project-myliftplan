@@ -1,3 +1,25 @@
-testerclass{
-	color: red;
+body{
+	margin: 0;
+	background-color: darkgrey;
+}
+
+a{
+	text-decoration: none;
+}
+
+.web-title{
+	margin: 0;
+	padding: 10px 10px;
+	font-size 30px;
+	font-weight: 100;
+	background-color: grey;
+	color: black;
+}
+
+.navbar{
+	margin: 0;
+	background-color: grey;
+	color: black;
+	font-size: 20px;
+	line-height: 24px;
 }
