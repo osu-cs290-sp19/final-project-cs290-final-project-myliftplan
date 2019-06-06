@@ -1,0 +1,18 @@
+var path = require('path');
+var express= require('express');
+var express_handlebars = require('express-handlebars');
+var app = require('express');
+var port = process.env.PORT || 3000;
+
+app.engine('handlebars', express_handlebars({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.use(express.static('public'));
+
+app.get('/', function(req, res, next){
+	res.status(200).render('home');
+});
+
+app.listen(port, function (){
+	console.log("==server listening on port", port);
+});
