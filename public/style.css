@@ -1,6 +1,6 @@
 body{
 	margin: 0;
-	background-color: darkgrey;
+	background-color: black;
 }
 
 a{
@@ -9,17 +9,68 @@ a{
 
 .web-title{
 	margin: 0;
-	padding: 10px 10px;
-	font-size 30px;
-	font-weight: 100;
+	padding: 10px 20px;
+	font-size 45px;
+	font-weight: 900;
 	background-color: grey;
 	color: black;
 }
 
 .navbar{
+	overflow: hidden;
 	margin: 0;
 	background-color: grey;
-	color: black;
 	font-size: 20px;
 	line-height: 24px;
+}
+
+.navlist{
+	margin: 0;
+	padding: 0;
+}
+
+.navlisted{
+	display: inline-block;
+	margin: 0 0 0 20px;
+}
+
+.navitem{
+	color: black;
+}
+
+.fourO{
+	font-size: 80px;
+	display: flex;
+	justify-content: center;
+	color: white;
+}
+
+.fourOCont{
+	position: relative;
+	font-size: 30px;
+	left: 35%;
+	color: white;
+}
+
+.homemainPLACEHOLDER{
+	display: flex;
+	align-items: center;
+}
+
+.motto{
+	display: flex;
+	justify-content: center;
+	color: white;
+	font-size: 50px;;
+}
+
+.buttonholder{
+	display: flex;
+	justify-content: center;
+}
+
+.workoutbut{
+	font-size: 15px;
+	margin: 0 50px 0 50px;
+	padding: 30px 50px;
 }

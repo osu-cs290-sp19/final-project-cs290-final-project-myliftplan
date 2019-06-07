@@ -18,6 +18,10 @@ app.get('/home', function(req, res, next){
         res.status(200).render('home');
 });
 
+app.get('*', function(req, res, next){
+        res.status(404).render('404');
+});
+
 app.listen(port, function (){
 	console.log("==server listening on port", port);
 });
