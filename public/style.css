@@ -74,3 +74,38 @@ a{
 	margin: 0 50px 0 50px;
 	padding: 30px 50px;
 }
+
+.worksearch{
+	background-color: grey;
+	display: flex;
+	justify-content: space-between;
+}
+
+.plancreator{
+	margin: 0 0 5px 20px;
+	background-color: #f5ff89;
+	border: solid black 1px;
+	border-radius: 5px;
+	font-size: 15px;
+}
+
+.plansearcher{
+	margin: 0 20px 5px 0;	
+	background-color: #f5ff89;
+	font-size: 15px;
+	border: solid black 1px;
+	border-radius: 5px;
+}
+
+.workout-list{
+	display: flex;
+	flex-direction: column;
+}
+
+.workout-holder{
+	background-color: grey;
+	padding: 50px 50px;
+	border: solid white 1px;
+	border-radius: 15px;
+	margin: 20px 100px 20px 100px;
+}
