@@ -109,3 +109,36 @@ a{
 	border-radius: 15px;
 	margin: 20px 100px 20px 100px;
 }
+
+.createContainer{
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+  	justify-content: flex-start;
+  	align-items: center;
+
+}
+.lift{
+
+	
+	background-color: grey;
+}
+
+.liftTitle{
+	color: white;
+	font-size: 32px;
+}
+.createHeader{
+	text-align: center;
+}
+.saveButton{
+	text-align: center;
+}
+table th{
+	text-align: left;
+	padding: 4px 30px 4px 8px;
+}
+table td{
+	border: 1px solid black;
+	padding: 4px 8px;
+}
