@@ -109,6 +109,7 @@ a{
 	border-radius: 15px;
 	margin: 20px 100px 20px 100px;
 }
+<<<<<<< HEAD
 	
 .workout-content{
 
@@ -126,3 +127,38 @@ a{
 .workout-author{
 
 }
+=======
+
+.createContainer{
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+  	justify-content: flex-start;
+  	align-items: center;
+
+}
+.lift{
+
+	
+	background-color: grey;
+}
+
+.liftTitle{
+	color: white;
+	font-size: 32px;
+}
+.createHeader{
+	text-align: center;
+}
+.saveButton{
+	text-align: center;
+}
+table th{
+	text-align: left;
+	padding: 4px 30px 4px 8px;
+}
+table td{
+	border: 1px solid black;
+	padding: 4px 8px;
+}
+>>>>>>> 3891b7b1f0c839ef56f71c2b59695a691227a317
