@@ -22,6 +22,10 @@ app.get('/plans', function(req, res, next){
         res.status(200).render('plans');
 });
 
+app.get('/create', function(req, res, next){
+        res.status(200).render('create');
+});
+
 app.get('*', function(req, res, next){
         res.status(404).render('404');
 });
