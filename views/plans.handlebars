@@ -1,52 +1,27 @@
 <main>
-      	<section>
-            	<div class = "worksearch">
-                     	<button class = "plancreator" type="button">Create a Plan</button>
-              		<input class = "plansearcher" type="text" placeholder="Search Workouts">
-    		</div>
-  	</section>
-	<div class = "workout-list">
-     		<article class = "workout-holder">
-        	     	<div class = "workout-content workout-icon">
-                	  	<i class="fas fa-running"></i>
-              		</div>
-               		<p class = "workout-content workout-title">Title of Workout Plan</p>
-        		<p class = "workout-content workout-author">Author of Workout Plan</p>
-     		</article>
-   		<article class = "workout-holder">
-                        <div class = "workout-content workout-icon">
-                                <i class="fas fa-running"></i>
-                        </div>
-                        <p class = "workout-content workout-title">Title of Workout Plan</p>
-                        <p class = "workout-content workout-author">Author of Workout Plan</p>
-                </article>
-		<article class = "workout-holder">
-                        <div class = "workout-content workout-icon">
-                                <i class="fas fa-running"></i>
-                        </div>
-                        <p class = "workout-content workout-title">Title of Workout Plan</p>
-                        <p class = "workout-content workout-author">Author of Workout Plan</p>
-                </article>
-		<article class = "workout-holder">
-                        <div class = "workout-content workout-icon">
-                                <i class="fas fa-running"></i>
-                        </div>
-                        <p class = "workout-content workout-title">Title of Workout Plan</p>
-                        <p class = "workout-content workout-author">Author of Workout Plan</p>
-                </article>
-		<article class = "workout-holder">
-                        <div class = "workout-content workout-icon">
-                                <i class="fas fa-running"></i>
-                        </div>
-                        <p class = "workout-content workout-title">Title of Workout Plan</p>
-                        <p class = "workout-content workout-author">Author of Workout Plan</p>
-                </article>
-		<article class = "workout-holder">
-                        <div class = "workout-content workout-icon">
-                                <i class="fas fa-running"></i>
-                        </div>
-                        <p class = "workout-content workout-title">Title of Workout Plan</p>
-                        <p class = "workout-content workout-author">Author of Workout Plan</p>
-                </article>
-	</div>
+  <section>
+    <div class = "worksearch">
+      <button class = "plancreator" type="button">Create a Plan</button>
+      <input class = "plansearcher" type="text" placeholder="Search Workouts">
+    </div>
+  </section>
+
+  {{#each workouts}}
+    <div class = "workout-list">
+
+      <article class = "workout-holder">
+
+       <div class = "workout-content workout-icon">
+
+            <i class="fas fa-running"></i>
+
+        </div>
+
+        <p class = "workout-content workout-title">{{title}}</p>
+        <p class = "workout-content workout-author">Author of Workout Plan</p>
+
+      </article>
+
+	 </div>
+  {{/each}}
 </main>
