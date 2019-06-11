@@ -1,9 +1,8 @@
 <main>
 	<section class="createHeader">
  
-		<h2 class="liftTitle">Title of Workout</h2>
-		<button type="button">Add Lift</button>
-        <button type="button">Delete Lift</button>
+		<h2 class="liftTitle">{{title}}</h2>
+		<button type="button" id="addLift">Add Lift</button>
 
 	</section>
 
@@ -12,55 +11,31 @@
 		<article class="lift">
 
 
-			<table>
+			<table class="liftTable">
 				<tr>
 					<th>Muscle</th>
 					<th>Exercise Name</th>
 					<th>Sets</th>
 					<th>Reps</th>
 					<th>Rest</th>
+					<th></th>
 				</tr>
+				{{#each lifts}}
 				<tr>
-					<td>Back</td>
-					<td>Lat Pulldown</td>
-					<td><div contenteditable>5</div></td>
-					<td>10</td>
-					<td>60 sec</td>
+					<td>{{muscle}}</td>
+					<td>{{liftName}}</td>
+					<td>{{sets}}</td>
+					<td>{{reps}}</td>
+					<td>{{rest}} {{unit}}</td>
+					<td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
 				</tr>
-				<tr>
-					<td>Back</td>
-					<td>Barbell Bent Over Row</td>
-					<td><div contenteditable>3</div></td>
-					<td>8</td>
-					<td>60 sec</td>
-				</tr>
-				<tr>
-					<td>Back</td>
-					<td>Cable Rope Lat Pulldown</td>
-					<td><div contenteditable>3</div></td>
-					<td>8</td>
-					<td>60 sec</td>
-				</tr>
-				<tr>
-					<td>Back</td>
-					<td>Lat Pulldown</td>
-					<td><div contenteditable>5</div></td>
-					<td>10</td>
-					<td>60 sec</td>
-				</tr>
-				<tr>
-					<td>Back</td>
-					<td>Lat Pulldown</td>
-					<td><div contenteditable>5</div></td>
-					<td>10</td>
-					<td>60 sec</td>
-				</tr>
+				{{/each}}
 			</table>
 
 		</article>
 
 	
 	</section>
-	<div class="saveButton"><button type="button">Save Plan</button></div>
+	<div class="saveButton" id="save-button"><button type="button">Save Plan</button></div>
 
 </main>
