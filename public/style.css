@@ -167,4 +167,47 @@ table td{
 	border: 1px solid black;
 	padding: 4px 8px;
 }
+
+.about-card-holder{
+	display: flex;
+	flex-direction: column;
+}
+
+.about-card{
+	background-color: grey;
+	border: 1px solid white;
+	border-radius: 15px;
+	margin: 5px 15px 5px 15px;
+	display: flex;
+}
+.name-pic{
+	margin: 15px;
+	display: flex;
+	flex-direction: column;	
+}
+.about-name{
+	margin: 0px 0px 0px 20px;
+	color: black;
+	font-size: 30px;
+	font-weight: 700;	
+}
+.about-bio{
+	margin: 50px 0px 0px 0px;
+}
+
+.bio-line{
+	margin: 5px;
+	display: flex;
+}
+
+.bio-line p{
+	margin: 3px;
+}
+
+.about-intro{
+	font-weight: 900;
+}
+.about-info{
+	font-weight: 100;
+}
 >>>>>>> 3891b7b1f0c839ef56f71c2b59695a691227a317
