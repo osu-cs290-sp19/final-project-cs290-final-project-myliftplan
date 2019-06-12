@@ -36,9 +36,17 @@ function getPersonIdFromURL() {
 function handleSaveClick() {
 	var i;
 	var j;
+	var temp;
+	var muscleArray = [];
+	var liftNameArray = [];
+	var setsArray = [];
+	var repsArray = [];
+	var restArray = [];
+	var unitArray = [];
 	var cellVals = new Array(5);
+	
 	var table = document.getElementById("lift-table");
-
+	var liftTitle = document.getElementsByClassName("liftTitle");
 	
 
 	for(i = 1; i < table.rows.length; i++) {
@@ -48,18 +56,31 @@ function handleSaveClick() {
 		{
 			cellVals[j] = cells.item(j).innerHTML;
 		}
+		muscleArray.push(cellVals[0]);
+		liftNameArray.push(cellVals[1]);
+		setsArray.push(cellVals[2]);
+		repsArray.push(cellVals[3]);
+		restArray.push(cellVals[4]);
 	}
-	
+
+	for (i = 0; i < restArray.length; i++) {
+		temp = restArray[i].split(" ");
+		restArray[i] = temp[0];
+		unitArray.push(temp[1]);
+	}
+
 	var postRequest = new XMLHttpRequest();
     var requestURL = '/plans/' + getPersonIdFromURL()  + '/editPlan';
 	postRequest.open('POST', requestURL);
 
 	var requestBody = JSON.stringify({
-		muscle: cellVals[0],
-		liftName: cellVals[1],
-		sets: cellVals[2],
-		reps: cellVals[3],
-		rest: cellVals[4]
+		title: liftTitle,
+		muscle: muscleArray,
+		liftName: liftNameArray,
+		sets: setsArray,
+		reps: repsArray,
+		rest: restArray,
+		unit: unitArray
 	});
 
 	postRequest.setRequestHeader('Content-Type', 'application/json');

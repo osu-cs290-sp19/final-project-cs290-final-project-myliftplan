@@ -65,6 +65,52 @@ app.get('/plans/:title', function(req, res, next){
     });
 });
 
+app.post('/plans/:title/editPlan', function(req, res, next) {
+    var i;
+    var title = req.params.title;
+    if(req.body && req.body.muscle && req.body.liftName && req.body.sets && req.body.reps && req.body.rest && req.body.unit) {
+        var collection = db.collection('workouts');
+        var liftsArray = [];
+        for(i = 0; i < req.body.muscle.length; i++)
+        {
+            liftsArray.push({
+                muscle: req.body.muscle[i],
+                liftName: req.body.liftName[i],
+                sets: req.body.sets[i],
+                reps: req.body.reps[i],
+                rest: req.body.rest[i],
+                unit: req.body.unit[i]
+            });
+        }
+        
+        collection.updateOne(
+            { title_id: title },
+            { $set: { lifts: liftsArray } },
+            function (err, result) {
+                if (err) {
+                res.status(500).send({
+                    error: "Error inserting lift row into DB"
+                });
+                } else {
+                    console.log("== update result:", result);
+                    if (result.matchedCount > 0) {
+                        res.status(200).send("Success");
+                    } else {
+                        next();
+                    }
+                }
+            }
+        );   
+    } else {
+        res.status(400).send("Request Error")
+    }
+
+});
+
+app.get('/about', function(req,res,next) {
+    res.status(400).render('about');
+});
+
 app.get('*', function(req, res, next){
         res.status(404).render('404');
 });
