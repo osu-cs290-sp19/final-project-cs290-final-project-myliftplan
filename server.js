@@ -1,6 +1,7 @@
 var path = require('path');
 var express= require('express');
 var express_handlebars = require('express-handlebars');
+var bodyParser = requre('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 
 var app = express();
@@ -18,6 +19,8 @@ var db = null;
 //app.engine('handlebars', express_handlebars({defaultLayout: 'main'}));
 app.engine('handlebars', express_handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 

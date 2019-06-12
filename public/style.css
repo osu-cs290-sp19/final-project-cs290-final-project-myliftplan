@@ -150,8 +150,14 @@ a{
 .createHeader{
 	text-align: center;
 }
-.saveButton{
+#planButtons{
 	text-align: center;
+}
+.saveButton{
+	display: inline-block;
+}
+.deleteButton{
+	display: inline-block;
 }
 table th{
 	text-align: left;
