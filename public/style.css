@@ -76,17 +76,21 @@ a{
 }
 
 .worksearch{
-	background-color: grey;
+	background-color: black;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .plancreator{
-	margin: 0 0 5px 20px;
+	margin: 20px 0 0 0;
 	background-color: #f5ff89;
 	border: solid black 1px;
 	border-radius: 5px;
-	font-size: 15px;
+	font-size: 45px;
+}
+
+.plancreator:hover{
+	cursor: pointer;
 }
 
 .plansearcher{
@@ -109,7 +113,6 @@ a{
 	border-radius: 15px;
 	margin: 20px 100px 20px 100px;
 }
-<<<<<<< HEAD
 	
 .workout-content{
 
@@ -127,7 +130,6 @@ a{
 .workout-author{
 
 }
-=======
 
 .createContainer{
 	display: flex;
@@ -210,4 +212,3 @@ table td{
 .about-info{
 	font-weight: 100;
 }
->>>>>>> 3891b7b1f0c839ef56f71c2b59695a691227a317
