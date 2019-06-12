@@ -1,7 +1,7 @@
 var path = require('path');
 var express= require('express');
 var express_handlebars = require('express-handlebars');
-var bodyParser = requre('body-parser');
+var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 
 var app = express();
