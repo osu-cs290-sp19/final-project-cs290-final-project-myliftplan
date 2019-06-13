@@ -12,9 +12,8 @@ function addLift() {
 	cell4.innerHTML = "Reps";
 	cell5.innerHTML = "Rest";
 
-	var cell6 = row.insertCell(5);
-	var cell6 = document.createElement('button');
-	button.innerHTML = "Delete";
+	var deleteButton = row.insertCell(-1);
+	deleteButton.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this)"/>';
 
 }
 
@@ -85,6 +84,8 @@ function handleSaveClick() {
 
 	postRequest.setRequestHeader('Content-Type', 'application/json');
 	postRequest.send(requestBody);
+
+	alert("The plan has been saved.");
 }
 
  
