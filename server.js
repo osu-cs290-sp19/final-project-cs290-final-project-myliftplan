@@ -107,6 +107,55 @@ app.post('/plans/:title/editPlan', function(req, res, next) {
 
 });
 
+app.post('/plans/addWorkout', function (req,res,next) {
+    if(req.body && req.body.workoutTitle && req.body.workoutDesc) {
+        var collection = db.collection('workouts');
+       
+        collection.insertOne(
+            {
+                title: req.body.workoutTitle,
+                description: req.body.workoutDesc,
+                lifts: [],
+                title_id: req.body.workoutTitle 
+            },
+            function(err, result) {
+                if (err) {
+                    res.status.send({
+                        error: "Error inserting workout into DB"
+                    });
+                } else {
+                    res.status(200).send("Success");
+                }
+                
+            }
+        );
+    } else {
+        res.status(400).send("Request needs a body with a title and description");
+    }
+});
+
+app.post('/plans/:title/deletePlan', function(req,res,next) {
+    var title = req.params.title;
+    
+    var collection = db.collection('workouts');
+
+    collection.deleteOne(
+        {title: title},
+        function(err, result) {
+            if (err) {
+                res.status(500).send({
+                    error: "Error deleting plan"
+                });
+            } else {
+                if(result.matchedCount > 0)
+                    res.status(200).send("Success");
+                else
+                    next();
+            }
+        }   
+    );
+});
+
 app.get('/about', function(req,res,next) {
     res.status(400).render('about');
 });

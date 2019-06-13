@@ -2,6 +2,7 @@
 	<section class="createHeader">
  
 		<h2 class="liftTitle">{{title}}</h2>
+		<p class="liftDesc">{{description}}</p>
 		<button type="button" id="addLift">Add Lift</button>
 
 	</section>
@@ -22,11 +23,11 @@
 				</tr>
 				{{#each lifts}}
 				<tr>
-					<td>{{muscle}}</td>
-					<td>{{liftName}}</td>
-					<td>{{sets}}</td>
-					<td>{{reps}}</td>
-					<td>{{rest}} {{unit}}</td>
+					<td contenteditable>{{muscle}}</td>
+					<td contenteditable>{{liftName}}</td>
+					<td contenteditable>{{sets}}</td>
+					<td contenteditable>{{reps}}</td>
+					<td contenteditable>{{rest}} {{unit}}</td>
 					<td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
 				</tr>
 				{{/each}}

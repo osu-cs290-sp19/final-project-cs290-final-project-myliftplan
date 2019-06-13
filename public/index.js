@@ -12,6 +12,12 @@ function addLift() {
 	cell4.innerHTML = "Reps";
 	cell5.innerHTML = "Rest";
 
+	cell1.setAttribute("contenteditable", "true");
+	cell2.setAttribute("contenteditable", "true");
+	cell3.setAttribute("contenteditable", "true");
+	cell4.setAttribute("contenteditable", "true");
+	cell5.setAttribute("contenteditable", "true");
+
 	var deleteButton = row.insertCell(-1);
 	deleteButton.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this)"/>';
 
@@ -88,6 +94,18 @@ function handleSaveClick() {
 	alert("The plan has been saved.");
 }
 
+function handleDeleteWorkout() {
+	if(confirm("Delete Plan"))
+	{
+		var postRequest = new XMLHttpRequest();
+	    var requestURL = '/plans/' + getPersonIdFromURL()  + '/deletePlan';
+		postRequest.open('POST', requestURL);
+	
+		postRequest.setRequestHeader('Content-Type', 'application/json');
+		postRequest.send();
+	}
+	window.location.replace("http://localhost:3000/plans");
+}
  
 window.addEventListener('DOMContentLoaded', function() {
 
@@ -100,6 +118,19 @@ window.addEventListener('DOMContentLoaded', function() {
 	if(addLiftRow) {
 		addLiftRow.addEventListener('click', addLift);
 	}
+
+	if(closebutton){
+	closebutton.addEventListener('click', hidemodal);
+	}
+	if(cancelbutton){
+		cancelbutton.addEventListener('click', hidemodal);
+	}
+	if(acceptbutton){
+		acceptbutton.addEventListener('click', modalaccept);
+	}
+	var deleteWorkout = document.getElementById('delete-button');
+	if(deleteWorkout)
+		deleteWorkout.addEventListener('click',handleDeleteWorkout);
 
 });
 
@@ -120,15 +151,8 @@ var closebutton = document.getElementById("modal-close-button");
 var cancelbutton = document.getElementById("modal-cancel-button");
 var acceptbutton = document.getElementById("modal-accept-button");
 
-if(closebutton){
-	closebutton.addEventListener('click', hidemodal);
-}
-if(cancelbutton){
-	cancelbutton.addEventListener('click', hidemodal);
-}
-if(acceptbutton){
-	acceptbutton.addEventListener('click', modalaccept);
-}
+
+
 function hidemodal(){
 	var backdrop = document.getElementById("modal-backdrop");
         var workoutmodal = document.getElementById("add-workout-modal");
@@ -148,15 +172,40 @@ function clearmodalvals(){
 }
 
 function modalaccept(){
-	var cardname = document.getElementById("modal-name").value;
-	var carddesc = document.getElementById("modal-desc").value;
-	
+	var cardname = document.getElementById("modal-name").value.trim();
+	var carddesc = document.getElementById("modal-desc").value.trim();
+
 	if(cardname && carddesc){
-		//NOAH YOUR MONGO STUFF GOES HERE
 		
-		hidemodal();	
-	}
-	else{
+		var postRequest = new XMLHttpRequest();
+   		var requestURL = '/plans/addWorkout';
+    	postRequest.open('POST', requestURL);
+
+    	var requestBody = JSON.stringify({
+      		workoutTitle: cardname,
+      		workoutDesc: carddesc
+    	});
+
+    	postRequest.addEventListener('load', function (event) {
+      		if (event.target.status === 200) {
+     			var workoutTemplate = Handlebars.templates.wrk;
+        		var newWorkoutHTML = workoutTemplate({
+          			title: cardname,
+          			description: carddesc
+        		});
+        		var workoutContainer = document.querySelector('.workout-list');
+        		workoutContainer.insertAdjacentHTML('beforeend', newWorkoutHTML);
+      		} else {
+        		alert("Error storing workout: " + event.target.response);
+      		}
+    	});
+
+    	postRequest.setRequestHeader('Content-Type', 'application/json');
+    	postRequest.send(requestBody);
+
+    	hidemodal();
+	
+	}else{
 		alert("Please fill out the required fields brochacho!");
 	}
 	

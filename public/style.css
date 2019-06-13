@@ -73,7 +73,7 @@ a{
 
 .workoutbut{
 	font-size: 15px;
-	margin: 0 50px 0 50px;
+	margin: 0 50px 20px 50px;
 	padding: 30px 50px;
 }
 
@@ -85,14 +85,14 @@ a{
 
 #plancreator{
 	margin: 20px 0 0 0;
-	background-color: #f5ff89;
-	border: solid black 1px;
+	background-color: grey;
 	border-radius: 5px;
 	font-size: 45px;
 }
 
 #plancreator:hover{
 	cursor: pointer;
+	background-color: red;
 }
 
 .plansearcher{
@@ -132,10 +132,15 @@ a{
 }
 .workout-icon:hover{
 	font-size:90px;
+	position: relative;
+	right: 2px;
+
 	color: red;
 	cursor: pointer;
 }
-
+#workoutT {
+	font-size: 32px;
+}
 .workout-content{
 	font-size: 20px;
 }
@@ -188,7 +193,9 @@ table td{
 	border: 1px solid black;
 	padding: 4px 8px;
 }
-
+table td:hover {
+	cursor: pointer;
+}
 .about-card-holder{
 	display: flex;
 	flex-direction: column;
@@ -307,7 +314,7 @@ table td{
 	border-radius: 5px;
 }
 #modal-desc{
-	padding: 100px 8px 8px 8px;
+	
 }
 .modal-input text-area{
 	min-height: 64px;
@@ -334,3 +341,51 @@ table td{
 	background-color: #5eff89;
 }
 
+.liftDesc {
+	color: white;
+	font-size: 18px;
+}
+
+#addLift {
+	margin: 20px 20px;
+	background-color: grey;
+	border-radius: 5px;
+	font-size: 30px;
+}
+#addLift:hover{
+	cursor: pointer;
+	background-color: red;
+}
+#save-button {
+	margin: 20px 20px;
+	background-color: grey;
+	border-radius: 5px;
+	font-size: 25px;
+}
+#save-button:hover{
+	cursor: pointer;
+	background-color: red;
+}
+#delete-button {
+	margin: 20px 20px;
+	background-color: grey;
+	border-radius: 5px;
+	font-size: 25px;
+}
+#delete-button:hover{
+	cursor: pointer;
+	background-color: red;
+}
+#lift-table {
+	border-collapse: collapse;
+	font-size: 20px;
+	
+	margin: 5px;
+}
+.center {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+  	border-radius: 10px;
+}
