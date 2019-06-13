@@ -72,11 +72,16 @@ a{
 }
 
 .workoutbut{
-	font-size: 15px;
+	font-size: 20px;
 	margin: 0 50px 20px 50px;
 	padding: 30px 50px;
+	background-color: grey;
+	border-radius: 5px;
 }
-
+.workoutbut:hover{
+	cursor: pointer;
+	background-color: red;
+}
 .worksearch{
 	background-color: black;
 	display: flex;
