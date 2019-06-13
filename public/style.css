@@ -169,9 +169,8 @@ a{
 
 }
 .lift{
-
-	
 	background-color: grey;
+	border-radius: 5px;
 }
 
 .liftTitle{
