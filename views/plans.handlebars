@@ -1,7 +1,7 @@
 <main>
   <section>
     <div class = "worksearch">
-      <button class = "plancreator" type="button">Create a Plan</button>
+      <button id = "plancreator" type="button">Create a Plan</button>
       <!-- <input class = "plansearcher" type="text" placeholder="Search Workouts"> -->
     </div>
   </section>
@@ -11,17 +11,41 @@
 
       <article class = "workout-holder">
 
-       <div class = "workout-content workout-icon">
+       		<a href="plans/{{title}}"><div class = "workout-icon" href="{{title}}">
 
-            <i class="fas fa-running"></i>
+            	<i class="fas fa-running" href="plans/{{title}}"></i>
 
-        </div>
-
-        <p class = "workout-content workout-title">{{title}}</p>
-        <p class = "workout-content workout-author">Author of Workout Plan</p>
-
-      </article>
-
+        	</div></a>
+		<div class = "workout-information">
+        		<p class = "workout-content workout-title">Workout Name</p>
+        		<p class = "workout-content workout-desc">{{title}}</p>
+			<p class = "workout-content workout-title">Description</p>
+			<p class = "workout-content workout-desc">{{description}}</p>
+		</div>
+	</article>
 	 </div>
   {{/each}}
+	<div id="modal-backdrop" class ="hidden"></div>
+	<div id="add-workout-modal" class="hidden">
+		<div class="modal-contents">
+			<div class="modal-header">
+				<p>Add a new workout</p>
+				<button type="button" id="modal-close-button">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="modal-input">
+					<label for="modal-name">Workout Name</label>
+					<input type="text" id="modal-name">
+				</div>
+				<div class="modal-input">
+					<label for="modal-desc">Workout Description</label>
+					<input type="text" id="modal-desc">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="modal-cancel-button">Cancel</button>
+				<button type="button" id="modal-accept-button">Create Workout</button>
+			</div>
+		</div>
+	</div>
 </main>

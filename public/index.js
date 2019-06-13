@@ -101,3 +101,63 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 
 });
+
+var plancreator = document.getElementById("plancreator");
+if(plancreator){
+	plancreator.addEventListener('click', showModal);
+}
+
+function showModal(){
+	var backdrop = document.getElementById("modal-backdrop");
+	var workoutmodal = document.getElementById("add-workout-modal");
+	
+	backdrop.classList.remove("hidden");
+	workoutmodal.classList.remove("hidden");
+}
+
+var closebutton = document.getElementById("modal-close-button");
+var cancelbutton = document.getElementById("modal-cancel-button");
+var acceptbutton = document.getElementById("modal-accept-button");
+
+if(closebutton){
+	closebutton.addEventListener('click', hidemodal);
+}
+if(cancelbutton){
+	cancelbutton.addEventListener('click', hidemodal);
+}
+if(acceptbutton){
+	acceptbutton.addEventListener('click', modalaccept);
+}
+function hidemodal(){
+	var backdrop = document.getElementById("modal-backdrop");
+        var workoutmodal = document.getElementById("add-workout-modal");
+
+        backdrop.classList.add("hidden");
+        workoutmodal.classList.add("hidden");
+	
+	clearmodalvals();
+}
+
+function clearmodalvals(){
+	var modalinput = document.getElementsByClassName("modal-input");
+	for(var i = 0; i < modalinput.length; i++){
+		var input = modalinput[i].querySelector('input, textarea');
+		input.value = '';
+	}
+}
+
+function modalaccept(){
+	var cardname = document.getElementById("modal-name").value;
+	var carddesc = document.getElementById("modal-desc").value;
+	
+	if(cardname && carddesc){
+		//NOAH YOUR MONGO STUFF GOES HERE
+		
+		hidemodal();	
+	}
+	else{
+		alert("Please fill out the required fields brochacho!");
+	}
+	
+
+}

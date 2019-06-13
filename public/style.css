@@ -5,7 +5,9 @@
 
 a{
 	text-decoration: none;
+	color: black;
 }
+
 
 .web-title{
 	margin: 0;
@@ -81,7 +83,7 @@ a{
 	justify-content: center;
 }
 
-.plancreator{
+#plancreator{
 	margin: 20px 0 0 0;
 	background-color: #f5ff89;
 	border: solid black 1px;
@@ -89,7 +91,7 @@ a{
 	font-size: 45px;
 }
 
-.plancreator:hover{
+#plancreator:hover{
 	cursor: pointer;
 }
 
@@ -102,8 +104,7 @@ a{
 }
 
 .workout-list{
-	display: flex;
-	flex-direction: column;
+
 }
 
 .workout-holder{
@@ -112,23 +113,41 @@ a{
 	border: solid white 1px;
 	border-radius: 15px;
 	margin: 20px 100px 20px 100px;
+	display: flex;
+}
+
+.workout-holder a{
+	text-decoration: none;
 }
 	
-.workout-content{
-
+.workout-information{
+	display: flex;
+	flex-direction: column;
 }
-
+.workout-information p{
+}
 .workout-icon{
 	font-weight: 800;
-	font-size: 25px;
+	font-size: 86px;
+}
+.workout-icon:hover{
+	font-size:90px;
+	color: red;
+	cursor: pointer;
+}
+
+.workout-content{
+	font-size: 20px;
 }
 
 .workout-title{
-
+	font-weight: 900;
+	margin: 0 0 0 10px;
 }
 
-.workout-author{
-
+.workout-desc{
+	font-weight: 100;
+	margin: 0 0 0 20px;
 }
 
 .createContainer{
@@ -212,3 +231,106 @@ table td{
 .about-info{
 	font-weight: 100;
 }
+
+#modal-backdrop{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+#add-workout-modal{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1010;
+	overflow: scroll;
+}
+
+.hidden{
+	display: none;
+}
+
+.modal-contents{
+	width: auto;
+	max-width: 900px;
+	min-width: 350px;
+	margin: 40px auto;
+	background-color: grey;
+	border: solid white 1px;
+	border-radius: 15px;
+}
+.modal-header{
+	position: relative;
+	padding: 10px 20px;
+}
+.modal-header p{
+	margin: 0;
+	font-size: 35px;
+	font-weight: 900;
+}
+#modal-close-button{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	font-size: 35px;
+	border: none;
+	background: none;
+	padding: none;
+	cursor: pointer;
+}
+.modal-body{
+	padding: 20px;
+}
+.modal-input{
+	display: flex;
+	align-items: center;
+	font-size: 25px;
+	margin: 10px 0;
+}	
+.modal-input label{
+	font-weight: 600;
+	flex: 1 75px;
+	margin-right: 10px;
+}
+.modal-input input,
+.modal-input text-area{
+	flex: 4 200px;
+	padding: 8px;
+	font-size: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#modal-desc{
+	padding: 100px 8px 8px 8px;
+}
+.modal-input text-area{
+	min-height: 64px;
+}
+.modal-footer{
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px 10px 20px 10px;
+}
+.modal-footer button{
+	font-size: 20px;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	margin-right: 20px;
+	cursor: pointer;	
+}
+#modal-cancel-button:hover{
+	background-color: #ff6e5e;
+}
+#modal-accept-button:hover{
+	background-color: #5eff89;
+}
+
