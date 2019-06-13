@@ -5,9 +5,11 @@
       <!-- <input class = "plansearcher" type="text" placeholder="Search Workouts"> -->
     </div>
   </section>
-  	{{#each workouts}}
-		{{> wrk}}
-  	{{/each}}
+  	<div class="wrk-container">
+  		{{#each workouts}}
+			{{> wrk}}
+  		{{/each}}
+  	</div>
 	<div id="modal-backdrop" class ="hidden"></div>
 	<div id="add-workout-modal" class="hidden">
 		<div class="modal-contents">

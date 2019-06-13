@@ -193,7 +193,7 @@ function modalaccept(){
           			title: cardname,
           			description: carddesc
         		});
-        		var workoutContainer = document.querySelector('.workout-list');
+        		var workoutContainer = document.querySelector('.wrk-container');
         		workoutContainer.insertAdjacentHTML('beforeend', newWorkoutHTML);
       		} else {
         		alert("Error storing workout: " + event.target.response);
